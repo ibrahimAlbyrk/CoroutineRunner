@@ -9,7 +9,7 @@ namespace Core.Runtime.Coroutines
         public enum IDs
         {
             Global = 0,
-            Attack = 1
+            // categories... etc. 
         }
         
         private static GameObject _parent;
