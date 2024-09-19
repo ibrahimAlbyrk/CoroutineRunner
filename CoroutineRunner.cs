@@ -11,6 +11,12 @@ namespace Core.Runtime.Coroutines
             Global = 0,
             Attack = 1
         }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void Reset()
+        {
+            _hooks = new Dictionary<int, MonoBehaviourHook>();
+        }
         
         private static GameObject _parent;
         
