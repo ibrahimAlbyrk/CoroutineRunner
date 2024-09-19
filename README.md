@@ -42,18 +42,19 @@ namespace Core.Runtime.Coroutines
             return coroutine;
         }
 
-        public static void Stop(Coroutine coroutine, IDs categoryID = IDs.Global)
+        public static void Stop(ref Coroutine coroutine, IDs categoryID)
         {
-            Stop(coroutine, (int)categoryID);
+            Stop(ref coroutine, (int)categoryID);
         }
         
-        public static void Stop(Coroutine coroutine, int categoryID = 0)
+        public static void Stop(ref Coroutine coroutine, int categoryID = 0)
         {
             if (coroutine == null) return;
 
             if (_hooks.TryGetValue(categoryID, out var hook))
             {
                 hook.StopCoroutine(coroutine);
+                coroutine = null;
             }
         }
 
