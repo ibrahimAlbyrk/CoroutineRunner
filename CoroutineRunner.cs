@@ -9,7 +9,7 @@ namespace Core.Runtime.Coroutines
         public enum IDs
         {
             Global = 0,
-            // categories... etc. 
+            Attack = 1
         }
         
         private static GameObject _parent;
@@ -34,7 +34,7 @@ namespace Core.Runtime.Coroutines
                 hook = CreateHook(categoryID);
                 coroutine = hook.StartCoroutine(enumerator);
                 
-                _hooks.Add(categoryID, hook);
+                _hooks[categoryID] = hook;
             }
 
             return coroutine;
