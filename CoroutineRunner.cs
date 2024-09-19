@@ -20,7 +20,7 @@ namespace Core.Runtime.Coroutines
         
         private static GameObject _parent;
         
-        private static readonly Dictionary<int, MonoBehaviourHook> _hooks = new();
+        private static Dictionary<int, MonoBehaviourHook> _hooks = new();
 
         public static Coroutine Start(IEnumerator enumerator, IDs categoryID = IDs.Global)
         {
