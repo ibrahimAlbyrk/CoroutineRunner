@@ -1,6 +1,8 @@
 ```csharp
 namespace Core.Runtime.Coroutines
 {
+    public class MonoBehaviourHook : MonoBehaviour {}
+    
     public static class CoroutineRunner
     {
         public enum IDs
